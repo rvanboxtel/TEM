@@ -1,0 +1,128 @@
+
+division_template = {
+	name = "Empire-Handgunners"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+			}
+			
+	support = {
+        engineer = { x = 0 y = 0 }
+        artillery = { x = 0 y = 1 }
+	}
+}
+###########################
+#Reiksguard Knights
+division_template = {
+	name = "Reiksguard-knight"
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+        cavalry = { x = 0 y = 1 }
+        cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	    recon = { x = 0 y = 0 }
+	    artillery = { x = 0 y = 1 }
+	}
+}
+#############################
+#Helblaster Volley Cannon
+
+
+############################
+units = {
+
+	division= {	
+		name = "1. Empire Handgunners"
+		location = 7394
+		division_template = "Empire-Handgunners"
+		start_experience_factor = 0.3
+	}
+	division= {	
+		name = "2. Empire Handgunners"
+		location = 11293
+		division_template = "Empire-Handgunners"
+		start_experience_factor = 0.3
+	}
+	division= {	
+		name = "3. Empire Handgunners"
+		location = 3379
+		division_template = "Empire-Handgunners"
+		start_experience_factor = 0.3
+	}
+	division= {	
+		name = "4. Empire Handgunners"
+		location = 11371
+		division_template = "Empire-Handgunners"
+		start_experience_factor = 0.3
+	}
+	#####################
+	division= {	
+		name = "1. Reiksguard Knight"
+		location = 7394
+		division_template = "Reiksguard-knight"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+
+	}
+	division= {	
+		name = "2. Reiksguard Knight"
+		location = 11293
+		division_template = "Reiksguard-knight"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+	}
+	division= {	
+		name = "3. Reiksguard Knight"
+		location = 3379
+		division_template = "Reiksguard-knight"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+	}
+	division= {	
+		name = "4. Reiksguard Knight"
+		location = 11371
+		division_template = "Reiksguard-knight"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+	}
+}
+######################
+#Equipment building
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "TEM"
+		}
+		requested_factories = 10
+		progress = 0.1
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "TEM" 
+		}
+		requested_factories = 2
+		progress = 0.3
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "TEM" 
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
+	}
+}

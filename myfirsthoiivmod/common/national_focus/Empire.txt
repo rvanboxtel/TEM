@@ -1,0 +1,235 @@
+focus_tree = {
+	id = TheEmpireOfMen_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = TEM
+		}
+	}
+	#Extra research slots
+	focus = {
+		id = TEM_New_College_of_magic
+		icon = GFX_focus_research
+		text = new_college_of_magic
+		x = 1
+		y = 0
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+##Extra research slots
+	focus = {
+		id = TEM_New_College_of_magic_2
+		icon = GFX_focus_research
+		text = new_college_of_magic 2
+		prerequisite = { focus = TEM_New_College_of_magic }
+		mutually_exclusive = { focus = TEM_mutual }
+		x = 0
+		y = 1
+		cost = 5
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+#	
+	focus = {
+		id = TEM_mutual
+		icon = GFX_focus_research
+		text = Expanding_the_College_of_magic
+		prerequisite = { focus = TEM_New_College_of_magic }
+		mutually_exclusive = { focus = TEM_New_College_of_Magic_2 }
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+#
+focus = {
+		id = TEM_secret_weapons
+		icon = GFX_goal_generic_secret_weapon
+		text = secret_weapons
+		prerequisite = { focus = TEM_mutual }
+		prerequisite = { focus = TEM_New_College_of_Magic_2 }
+		x = 1
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 2
+				category = electronics
+				category = rocketry
+				category = nuclear
+			}
+		}
+	}
+#
+		}
+
+focus = {
+		id = TEM_civilian_infrastructure_1
+		icon = GFX_goal_generic_construct_mil_factory
+		text = civillian effort 1
+		x = 6
+		y = 0 
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				NOT = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+		#civilian factories
+			random_owned_controlled_state = {
+				limit = {
+					industrial_complex > 0
+					free_building_slots = {
+						building = industrial_complex
+						size > 2
+						include_locked = yes
+					}
+					#is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				#infrastructure
+				random_owned_controlled_state = {
+				limit = {
+					infrastructure > 0
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+						include_locked = yes
+					}
+					#is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+#
+focus = {
+		id = TEM_civilian_infrastructure_2
+		icon = GFX_goal_generic_construct_mil_factory
+		text = civillian effort 2
+		prerequisite = { focus = TEM_civilian_infrastructure_1 }
+		x = 5
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				NOT = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+		#civilian factories
+			random_owned_controlled_state = {
+				limit = {
+					industrial_complex > 0
+					free_building_slots = {
+						building = industrial_complex
+						size > 2
+						include_locked = yes
+					}
+					#is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				#infrastructure
+				random_owned_controlled_state = {
+				limit = {
+					infrastructure > 0
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+						include_locked = yes
+					}
+					#is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+#

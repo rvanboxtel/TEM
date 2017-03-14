@@ -1,0 +1,22 @@
+
+state=
+{
+	id=134
+	name="STATE_134" #Middenland
+	manpower = 667100
+	
+	state_category="city"
+
+	history=
+	{
+		owner = TEM
+		buildings = {
+			infrastructure = 10
+		}
+		add_core_of = TEM
+	}
+
+	provinces=
+	{
+337 3396 9255 9303 9321 9369 11238 11287 11371 	}
+}

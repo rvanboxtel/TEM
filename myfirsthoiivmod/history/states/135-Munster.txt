@@ -1,0 +1,33 @@
+
+state={
+	id=135
+	name="STATE_135" #reikland
+	manpower = 941400
+	resources={
+		aluminium=2
+		steel=20
+		oil=5
+		tungsten=3
+		chromium=4
+		rubber=1
+	}
+
+	state_category="megalopolis"
+
+	history={
+		owner = TEM
+		buildings = {
+			arms_factory = 5
+			infrastructure = 10
+			industrial_complex = 5
+		}
+		victory_points = {
+			7394 10 
+		}
+		add_core_of = TEM
+	}
+
+	provinces={
+		6289 6313 6405 7394 9284 9310 9405 11237 11267 11334 
+	}
+}
